@@ -7,20 +7,28 @@
     </head>
 <body>
     <div class="container">
-        <div class="title"><h1>Etch-a-Sketch Board</h1></div>
+        <div class="title">
+            <h1>Etch-a-Sketch Board</h1>
+            <div class="message"></div>
+        </div>
         <div class="content">
             <div class="board"></div>
             <div class="btns">                
-                <button>Black</button>
-                <button>Gray</button>
-                <button>Random</button>
-                <button>Erase</button>
-                <button>Reset</button>
+                <button class="blackBtn" onclick="changeColor('black')"></button>
+                <button class="randomBtn" onclick="changeColor('random')"></button>
+                <button class="eraseBtn" onclick="changeColor('white')"></button>
+                <button class="resetBtn" onclick="resetBoard()"></button>
             </div>
-        </div>
-        <div>
-            <input type="text" placeholder="Size of the Board" value="16" />
-            <button>Set Grid Size</button>
+            <div class="inputValue">
+                <input
+                    type="text" 
+                    placeholder="Size of the Board" 
+                    value="16" 
+                    onchange="changeBoardSize(this.value)"
+                    />
+                <button>Set Grid Size</button>
+            </div>
+            <div class="error">Input must be between 2 and 100</div>
         </div>
     </div>
 </body>
